@@ -143,12 +143,7 @@ public abstract class Menu {
     }
 
     public static void canMakeRecipeMenu() {
-        recipes = new ArrayList<>();
-        for (var el : Database.recipes.entrySet()) {
-            if (fridge.canMakeRecipe(el.getValue())) {
-                recipes.add(el.getValue());
-            }
-        }
+        canMakeRecipe();
 
         if (!recipes.isEmpty()) {
             for (var recipe : recipes) {

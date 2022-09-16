@@ -130,15 +130,6 @@ public abstract class Database {
         return allRecipes;
     }
 
-    public static ArrayList<Recipe> canMakeRecipe(Fridge fridge) {
-        ArrayList<Recipe> canMakeRecipes = new ArrayList<>();
-        for (var el : Database.recipes.entrySet()) {
-            if (fridge.canMakeRecipe(el.getValue())) {
-                canMakeRecipes.add(el.getValue());
-            }
-        }
-        return canMakeRecipes;
-    }
     public static boolean recipeInDatabase(String name) {
         for (var el : recipes.entrySet()) {
             if (el.getValue().getName().equalsIgnoreCase(name)) {

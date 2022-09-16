@@ -63,17 +63,6 @@ public class Fridge {
                 i--;
             }
         }
-        /*for (var item : ingredients) {
-            if (item.equals(ingredient) && item.getWeight() > ingredient.getWeight()) {
-                item.setWeight(item.getWeight() - ingredient.getWeight());
-                System.out.println(ingredient.getName() + " weight decreased.");
-            } else if (item.equals(ingredient) && item.getWeight() < ingredient.getWeight()) {
-                System.out.println("Cant decrease weight by that amount.");
-            } else if (item.equals(ingredient) && item.getWeight() == ingredient.getWeight()) {
-                ingredients.remove(item);
-                System.out.println("Ingredient removed.");
-            }
-        }*/
     }
 
     public boolean fridgeEmpty() {
@@ -99,11 +88,6 @@ public class Fridge {
 
     public void makeRecipe(Recipe recipe) {
         if (canMakeRecipe(recipe)) {
-            /*for (var item : ingredients) {
-                if (recipe.inRecipe(item)) {
-                    item.weight = item.weight - recipe.getIngredientWeight(item.getId());
-                }
-            }*/
             for (var item : ingredients) {
                 for (var recipeItem : recipe.getIngredients()) {
                     if (item.equals(recipeItem)) {
